@@ -1,0 +1,142 @@
+<!--<div class="calculator">-->
+
+<!--  <input type="text" class="calculator-screen" [value]="currentNumber" disabled />-->
+
+<!--  <div class="calculator-keys">-->
+
+<!--    <button type="button" (click) = "getOperation('+')" class="operator" value="+">+</button>-->
+<!--    <button type="button" (click) = "getOperation('-')" class="operator" value="-">-</button>-->
+<!--    <button type="button" (click) = "getOperation('*')" class="operator" value="*">x</button>-->
+<!--    <button type="button" (click) = "getOperation('/')" class="operator" value="/">&divide;</button>-->
+
+<!--    <button type="button" (click) = "getNumber('7')" value="7">7</button>-->
+<!--    <button type="button" (click) = "getNumber('8')" value="8">8</button>-->
+<!--    <button type="button" (click) = "getNumber('9')" value="9">9</button>-->
+
+
+<!--    <button type="button" (click) = "getNumber('4')" value="4">4</button>-->
+<!--    <button type="button" (click) = "getNumber('5')" value="5">5</button>-->
+<!--    <button type="button" (click) = "getNumber('6')" value="6">6</button>-->
+
+
+<!--    <button type="button" (click) = "getNumber('1')" value="1">1</button>-->
+<!--    <button type="button" (click) = "getNumber('2')" value="2">2</button>-->
+<!--    <button type="button" (click) = "getNumber('3')" value="3">3</button>-->
+
+
+<!--    <button type="button" (click) = "getNumber('0')" value="0">0</button>-->
+<!--    <button type="button" (click) = "getDecimal()" class="decimal" value=".">.</button>-->
+<!--    <button type="button" (click) = "clear()"  class="all-clear" value="all-clear">AC</button>-->
+
+<!--    <button type="button" (click) = "getOperation('=')" class="equal-sign" value="=">=</button>-->
+
+<!--  </div>-->
+<!--</div>-->
+
+<h1>Simple Calculator</h1>
+<style>
+  h1{
+    text-align: center;
+  }
+  .container{
+    margin: auto;
+    width: 17%;
+    padding: 10px;
+    border: 1px solid #f2f2f2;
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
+    box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
+    background-color: #F8F8F8;
+  }
+  .header{
+    background-color: #81C784;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+  }
+  table{
+    width: 100%;
+  }
+  td{
+    width: 25%;
+  }
+  .result{
+    font-size: 24px;
+    padding: 16px 5px;
+    font-weight: 700;
+    text-align: right;
+    width: 96%;
+    border: none;
+    background-color: #F8F8F8;
+  }
+  .global{
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    background-color: #F2F2F2;
+    width: 100%;
+  }
+  /*the global class padding reset for first-row class button*/
+  .first-row{
+    padding: 7px;
+  }
+  .plus{
+    height: 105px;
+  }
+  .green{
+    background-color: #81C784;
+  }
+  .red{
+    background-color: #F50258
+  }
+  .grey{
+    background-color: #F2F2F2;
+  }
+  .white-text{
+    color: #fff;
+  }
+
+</style>
+<div class="container">
+  <div class="header">Calculator</div>
+
+    <input type="text" class="result" [value]="currentNumber" disabled />
+  <table>
+    <tr>
+      <td><input type="button" value="&radic;" class="global first-row"></td>
+      <td><input type="button" value="(" class="global first-row"></td>
+      <td><input type="button" value=")" class="global first-row"></td>
+      <td><input type="button" value="%" class="global first-row"></td>
+    </tr>
+    <tr>
+      <td><input type="button" (click) = "getNumber('7')" value="7" class="global"></td>
+      <td><input type="button" (click) = "getNumber('8')" value="8" class="global"></td>
+      <td><input type="button" (click) = "getNumber('9')" value="9" class="global"></td>
+      <td><input type="button" (click) = "getOperation('/')" value="&divide;" class="global"></td>
+    </tr>
+    <tr>
+      <td><input type="button" (click) = "getNumber('4')" value="4" class="global"></td>
+      <td><input type="button" (click) = "getNumber('5')" value="5" class="global"></td>
+      <td><input type="button" (click) = "getNumber('6')" value="6" class="global"></td>
+      <td><input type="button" (click) = "getOperation('*')" value="&times;" class="global"></td>
+    </tr>
+    <tr>
+      <td><input type="button" (click) = "getNumber('1')" value="1" class="global"></td>
+      <td><input type="button" (click) = "getNumber('2')" value="2" class="global"></td>
+      <td><input type="button" (click) = "getNumber('3')" value="3" class="global"></td>
+      <td><input type="button" (click) = "getOperation('-')" value="-" class="global"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="button" (click) = "getNumber('0')" value="0" class="global grey"></td>
+      <td><input type="button" (click) = "getDecimal()" value="." class="global"></td>
+      <td rowspan="2"><input type="button" (click) = "getOperation('+')" value="+" class="global plus"></td>
+    </tr>
+    <tr>
+      <td><input type="button" (click) = "clear()" value="Del" class="global red white-text"></td>
+      <td colspan="2"><input type="button"  (click) = "getOperation('=')" value="=" class="global green white-text"></td>
+    </tr>
+  </table>
+</div>
+
